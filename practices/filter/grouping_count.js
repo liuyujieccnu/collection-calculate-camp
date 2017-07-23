@@ -1,8 +1,15 @@
 'use strict';
 
 function grouping_count(collection) {
-
-  //在这里写入代码
+	let num = new Array;
+	for(let i in collection){
+		if(num[collection[i]]==null){
+			num[collection[i]]=1;
+		}else{
+			num[collection[i]]++;
+		}
+	}
+	return num;
 }
 
 module.exports = grouping_count;
