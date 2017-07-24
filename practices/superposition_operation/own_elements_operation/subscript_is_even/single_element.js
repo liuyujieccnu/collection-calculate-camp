@@ -2,21 +2,23 @@
 var single_element = function(collection){
 	let res = new Array;
 	for(let i in collection){
-		if(collection[i]%2!=0){
+		if(i%2!=0){
 			res.push(collection[i]);
 		}
 	}
+	
 	let con = new Array;
-	for(let i in res){
+	let flag = new Array;
+	for(let i=0;i<res.length;i++){
 		for(let j=0;j<i;j++){
 			if(res[i]==res[j]){
-				res[i]=-1;
-				res[j]=-1;
+				flag.push(i);
+				flag.push(j);
 			}
 		}
 	}
-	for(let i in res){
-		if(res[i]!=-1)
+	for(let i=0;i<res.length;i++){
+		if(flag.indexOf(i)==-1)
 			con.push(res[i]);
 	}
 	return con;
